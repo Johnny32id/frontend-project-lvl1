@@ -14,10 +14,16 @@
     "project",
     "games"
   ],
-  "author": "Евгений Слиж",
+  "author": "Evgeniy Slizh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Johnny32id/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/Johnny32id/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/Johnny32id/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3"
+  }
 }
