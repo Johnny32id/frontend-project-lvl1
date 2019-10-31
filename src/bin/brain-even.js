@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import { brainEvenRules, greetings, userName, getRandomNumber, evenGame } from '..';
+import { brainEvenRules, greetings, userName, getRandomNumber, evenGame, askName } from '..';
+greetings();
+brainEvenRules();
 
-console.log('Hello, ' + userName + '!');
+evenGame();
