@@ -20,12 +20,13 @@ export const brainGame = () => {
             console.log(`Congratulations, ${name}!`);
             break;
         }
-        console.log(`Question: ${car(questionAnswer())}`);
+        const argQA = questionAnswer();
+        console.log(`Question: ${car(argQA)}`);
         const userAnswer = readlineSync.question('Your answer: ');
-        if (userAnswer === cdr(questionAnswer())) {
+        if (userAnswer === cdr(argQA)) {
             console.log('Correct!');
         } else {
-            console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(questionAnswer())}.\nLet's try again, ${name}`);
+            console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(argQA)}.\nLet's try again, ${name}`);
             break;
         };
     };
