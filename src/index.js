@@ -1,6 +1,5 @@
 import readlineSync from "readline-sync";
 import {cons, car, cdr, toString} from "@hexlet/pairs";
-import {questionAnswer} from "./bin/games/brain-even";
 export const greetings = () => (console.log("Welcome to the Brain Games!"));
 export const brainEvenRules = () => (console.log("Answer \"yes\" if the number is even, otherwise answer \"no\"."));
 export const brainCalcRules = () => console.log('What is the result of the experssion?');
@@ -10,9 +9,17 @@ export const userName = () => {
 };
 
 export const getRandomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-export const brainGame = () => {
+export const getRandomSign = () => {
+    const random = getRandomNumber(1, 3);
+    if(random === 1) {
+        return '+';
+    } else if (random === 2) {
+        return '-';
+    } else return '*';
+};
+export const brainGame = (questionAnswer) => {
     const name = userName();
     console.log('Hello, ' + name + '!');
     for (let counter = 0; counter <= 3; counter += 1) {
@@ -20,7 +27,7 @@ export const brainGame = () => {
             console.log(`Congratulations, ${name}!`);
             break;
         }
-        const argQA = questionAnswer();
+        const argQA = questionAnswer;
         console.log(`Question: ${car(argQA)}`);
         const userAnswer = readlineSync.question('Your answer: ');
         if (userAnswer === cdr(argQA)) {
