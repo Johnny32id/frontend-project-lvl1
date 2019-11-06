@@ -19,7 +19,15 @@ export const getRandomSign = () => {
     } else if (random === 2) {
         return '-';
     } else return '*';
-};export const commonDivisor = (firstNumber, secondNumber) => {
+};
+export const randomNumbersCalculation = (firstNumber, secondNumber, sign) => {
+    if (sign === '+'){
+        return firstNumber + secondNumber;
+    } else if (sign === '-') {
+        return firstNumber - secondNumber;
+    } else return firstNumber * secondNumber;
+};
+export const commonDivisor = (firstNumber, secondNumber) => {
     let divisor = 1;
     for(let counter = 1; counter < firstNumber && counter < secondNumber; counter += 1) {
         if (firstNumber % counter === 0 && secondNumber % counter === 0) {
