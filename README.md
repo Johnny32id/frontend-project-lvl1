@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/Johnny32id/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Johnny32id/frontend-project-lvl1)
 
-https://asciinema.org/a/ZlrmnpnPn1RSFA3sHC7Y5Op5s
+brain-even https://asciinema.org/a/ZlrmnpnPn1RSFA3sHC7Y5Op5s
 
-https://asciinema.org/a/DOIeQzaSaPOVajSNJVo8ZM1vu
+brain-calc https://asciinema.org/a/DOIeQzaSaPOVajSNJVo8ZM1vu
+
+brain-gcd https://asciinema.org/a/jfrz5hf4qkp1tD2QU3LwsIxxN
