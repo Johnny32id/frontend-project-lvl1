@@ -27,7 +27,7 @@ export const brainGame = (questionAnswer) => {
             console.log(`Congratulations, ${name}!`);
             break;
         }
-        const argQA = questionAnswer;
+        const argQA = questionAnswer();
         console.log(`Question: ${car(argQA)}`);
         const userAnswer = readlineSync.question('Your answer: ');
         if (userAnswer === cdr(argQA)) {
