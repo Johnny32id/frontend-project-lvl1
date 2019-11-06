@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { brainEvenRules, greetings, brainGame, getRandomNumber } from '../..';
+import {greetings, brainGame, getRandomNumber, brainRules, } from '../..';
 import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
-brainEvenRules();
+brainRules("Answer \"yes\" if the number is even, otherwise answer \"no\".");
 
 export const getQuestionAnswer = () => {
     const evenQuestion = getRandomNumber(1, 100);
