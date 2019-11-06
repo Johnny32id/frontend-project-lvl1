@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { brainEvenRules, greetings, brainGame, getRandomNumber, getRandomSign, commonDivisor } from '../..';
+import {greetings, brainGame, getRandomNumber, commonDivisor, brainRules } from '../..';
 import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
-brainGcdRules();
+brainRules("Find the greatest common divisor of given numbers.");
 
 export const getQuestionAnswer = () => {
     const randomNumber1 = getRandomNumber(1, 100);
