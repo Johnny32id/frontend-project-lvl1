@@ -2,7 +2,7 @@
 import { brainEvenRules, greetings, brainGame, getRandomNumber, getRandomSign, commonDivisor } from '../..';
 import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
-brainEvenRules();
+brainGcdRules();
 
 export const getQuestionAnswer = () => {
     const randomNumber1 = getRandomNumber(1, 100);
