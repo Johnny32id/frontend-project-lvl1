@@ -4,9 +4,9 @@ import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
 brainEvenRules();
 
-export const questionAnswer = () => {
+export const getQuestionAnswer = () => {
     const evenQuestion = getRandomNumber(1, 100);
     const evenAnswer = evenQuestion % 2 === 0 ? "yes" : "no";
     return cons(evenQuestion, evenAnswer);
 }
-brainGame(questionAnswer);
+brainGame(getQuestionAnswer);
