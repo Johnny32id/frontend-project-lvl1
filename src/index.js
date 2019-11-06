@@ -18,8 +18,15 @@ export const getRandomSign = () => {
     } else if (random === 2) {
         return '-';
     } else return '*';
+};export const commonDivisor = (firstNumber, secondNumber) => {
+    let divisor = 1;
+    for(let counter = 1; counter < firstNumber && counter < secondNumber; counter += 1) {
+        if (firstNumber % counter === 0 && secondNumber % counter === 0) {
+            divisor = counter;
+        };
+    } return divisor;
 };
-export const brainGame = (questionAnswer) => {
+export const brainGame = (getQuestionAnswer) => {
     const name = userName();
     console.log('Hello, ' + name + '!');
     for (let counter = 0; counter <= 3; counter += 1) {
@@ -27,13 +34,13 @@ export const brainGame = (questionAnswer) => {
             console.log(`Congratulations, ${name}!`);
             break;
         }
-        const argQA = questionAnswer();
-        console.log(`Question: ${car(argQA)}`);
+        const questionAnswer = getQuestionAnswer();
+        console.log(`Question: ${car(questionAnswer)}`);
         const userAnswer = readlineSync.question('Your answer: ');
-        if (userAnswer === cdr(argQA)) {
+        if (userAnswer === cdr(questionAnswer)) {
             console.log('Correct!');
         } else {
-            console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(argQA)}.\nLet's try again, ${name}`);
+            console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(questionAnswer)}.\nLet's try again, ${name}`);
             break;
         };
     };
