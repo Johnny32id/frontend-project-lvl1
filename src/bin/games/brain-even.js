@@ -9,4 +9,4 @@ export const questionAnswer = () => {
     const evenAnswer = evenQuestion % 2 === 0 ? "yes" : "no";
     return cons(evenQuestion, evenAnswer);
 }
-brainGame(questionAnswer());
+brainGame(questionAnswer);
