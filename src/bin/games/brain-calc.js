@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import {greetings, brainGame, getRandomNumber, getRandomSign, brainCalcRules, randomNumbersCalculation } from '../..';
+import {greetings, brainGame, getRandomNumber, getRandomSign, randomNumbersCalculation, brainRules } from '../..';
 import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
-brainCalcRules();
+brainRules('What is the result of the expression?');
 
 export const getQuestionAnswer = () => {
     const randomNumber1 = getRandomNumber(1, 100);
