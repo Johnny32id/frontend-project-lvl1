@@ -2,7 +2,8 @@ import readlineSync from "readline-sync";
 import {cons, car, cdr, toString} from "@hexlet/pairs";
 export const greetings = () => (console.log("Welcome to the Brain Games!"));
 export const brainEvenRules = () => (console.log("Answer \"yes\" if the number is even, otherwise answer \"no\"."));
-export const brainCalcRules = () => console.log('What is the result of the experssion?');
+export const brainCalcRules = () => console.log('What is the result of the expression?');
+export const brainGcdRules = () => console.log("Find the greatest common divisor of given numbers.")
 export const userName = () => {
     const askName = (readlineSync.question('May I have your name?'));
     return askName;
