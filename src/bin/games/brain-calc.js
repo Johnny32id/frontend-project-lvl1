@@ -4,7 +4,7 @@ import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
 brainEvenRules();
 
-export const questionAnswer = () => {
+export const getQuestionAnswer = () => {
     const randomNumber1 = getRandomNumber(1, 100);
     const randomNumber2 = getRandomNumber(1, 100);
     const randomSign = getRandomSign();
@@ -12,4 +12,4 @@ export const questionAnswer = () => {
     const calcAnswer = String(eval(`${randomNumber1} ${randomSign} ${randomNumber2}`));
     return cons(calcQuestion, calcAnswer);
 }
-brainGame(questionAnswer);
+brainGame(getQuestionAnswer);
