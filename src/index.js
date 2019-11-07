@@ -6,7 +6,6 @@ export const userName = () => {
     const askName = (readlineSync.question('May I have your name?'));
     return askName;
 };
-
 export const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -32,6 +31,15 @@ export const commonDivisor = (firstNumber, secondNumber) => {
             divisor = counter;
         };
     } return divisor;
+};
+export const arithmeticProgression = (firstNumber, difference, randomNumber) => {
+    let progression = `${firstNumber}`;
+    for (let counter = 1; counter < 10; counter += 1) {
+        let nextProgressionNumber = firstNumber + difference * counter;
+        progression += ` ${nextProgressionNumber}`;
+    };
+    const randomReplace = firstNumber + difference * randomNumber;
+    return cons(progression.replace(randomReplace, ".."), randomReplace);
 };
 export const brainGame = (getQuestionAnswer) => {
     const name = userName();
