@@ -41,6 +41,15 @@ export const arithmeticProgression = (firstNumber, difference, randomNumber) => 
     const randomReplace = firstNumber + difference * randomNumber;
     return cons(progression.replace(randomReplace, ".."), randomReplace);
 };
+export const isPrime = (number) => {
+    let divisorCounter = 0;
+    for (let divisor = 1; divisor <= number; divisor += 1){
+        if (number % divisor === 0) {
+            divisorCounter += 1;
+        };
+    };
+    return divisorCounter === 2 ? "yes" : "no";
+};
 export const brainGame = (getQuestionAnswer) => {
     const name = userName();
     console.log('Hello, ' + name + '!');
