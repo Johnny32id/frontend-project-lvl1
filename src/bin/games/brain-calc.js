@@ -4,7 +4,7 @@ import {cons, car, cdr, toString} from "@hexlet/pairs";
 greetings();
 brainRules('What is the result of the expression?');
 
-export const getQuestionAnswer = () => {
+const getQuestionAnswer = () => {
     const randomNumber1 = getRandomNumber(1, 100);
     const randomNumber2 = getRandomNumber(1, 100);
     const randomSign = getRandomSign();
