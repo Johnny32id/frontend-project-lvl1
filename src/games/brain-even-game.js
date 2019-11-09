@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import cons from '@hexlet/pairs';
+import { cons } from '@hexlet/pairs';
 
-import getRandomNumber from '..';
+import { getRandomNumber } from '..';
 
 const getQuestionAnswer = () => {
   const evenQuestion = getRandomNumber(1, 100);
