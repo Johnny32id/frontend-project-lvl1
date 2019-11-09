@@ -1,4 +1,5 @@
 #! /usr/bin/env node
-import { greetings, userName, askName, name } from '..'
+import { greetings, askUserName } from '..';
+
 greetings();
-console.log(`Hello, ${userName()}!`);
+console.log(`Hello, ${askUserName()}!`);
