@@ -4,10 +4,7 @@ import { car, cdr } from '@hexlet/pairs';
 
 export const greetings = () => (console.log('Welcome to the Brain Games!'));
 export const brainRules = (rule) => (console.log(rule));
-export const askUserName = () => {
-  const askName = (readlineSync.question('May I have your name?'));
-  return askName;
-};
+export const askUserName = () => (readlineSync.question('May I have your name?'));
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 export const brainGame = (getQuestionAnswer) => {
   const name = askUserName();
