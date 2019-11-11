@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import { cons, car, cdr } from '@hexlet/pairs';
 
-import { getRandomNumber } from '..';
+import {
+  getRandomNumber, greetings, brainRules, brainGame,
+} from '..';
 
 const getProgressionWithReplace = (firstNumber, difference, randomNumber) => {
   let progression = `${firstNumber}`;
@@ -21,4 +23,9 @@ const getQuestionAnswer = () => {
   const progAnswer = String(cdr(progression));
   return cons(progQuestion, progAnswer);
 };
-export default getQuestionAnswer;
+const progressionGame = () => {
+  greetings();
+  brainRules('What number is missing in the progression?');
+  brainGame(getQuestionAnswer);
+};
+export default progressionGame;

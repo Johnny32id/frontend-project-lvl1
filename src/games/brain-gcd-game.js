@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import { cons } from '@hexlet/pairs';
 
-import { getRandomNumber } from '..';
+import {
+  getRandomNumber, greetings, brainRules, brainGame,
+} from '..';
 
 const commonDivisor = (firstNumber, secondNumber) => {
   let divisor = 1;
@@ -18,4 +20,9 @@ const getQuestionAnswer = () => {
   const gcdAnswer = String(commonDivisor(randomNumber1, randomNumber2));
   return cons(gcdQuestion, gcdAnswer);
 };
-export default getQuestionAnswer;
+const gcdGame = () => {
+  greetings();
+  brainRules('Find the greatest common divisor of given numbers.');
+  brainGame(getQuestionAnswer);
+};
+export default gcdGame;
