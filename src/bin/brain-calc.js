@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import { greetings, brainGame, brainRules } from '..';
+import calcGame from '../games/brain-calc-game';
 
-import getQuestionAnswer from '../games/brain-calc-game';
-
-greetings();
-brainRules('What is the result of the expression?');
-
-brainGame(getQuestionAnswer);
+calcGame();

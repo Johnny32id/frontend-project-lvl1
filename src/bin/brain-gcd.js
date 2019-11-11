@@ -1,10 +1,4 @@
 #!/usr/bin/env node
-import { greetings, brainGame, brainRules } from '..';
+import gcdGame from '../games/brain-gcd-game';
 
-import getQuestionAnswer from '../games/brain-gcd-game';
-
-greetings();
-brainRules('Find the greatest common divisor of given numbers.');
-
-
-brainGame(getQuestionAnswer);
+gcdGame();
