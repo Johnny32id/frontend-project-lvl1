@@ -1,22 +1,30 @@
 #!/usr/bin/env node
 import { cons } from '@hexlet/pairs';
 
-import { getRandomNumber } from '..';
+import {
+  getRandomNumber, greetings, brainRules, brainGame,
+} from '..';
 
 const getRandomSign = () => {
-  const random = getRandomNumber(1, 3);
-  if (random === 1) {
-    return '+';
-  } if (random === 2) {
-    return '-';
-  } return '*';
+  const randomNumberFrom1To3 = getRandomNumber(1, 3);
+  switch (randomNumberFrom1To3) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    default:
+      return '*';
+  }
 };
 const randomNumbersCalculation = (firstNumber, secondNumber, sign) => {
-  if (sign === '+') {
-    return firstNumber + secondNumber;
-  } if (sign === '-') {
-    return firstNumber - secondNumber;
-  } return firstNumber * secondNumber;
+  switch (sign) {
+    case '+':
+      return firstNumber + secondNumber;
+    case '-':
+      return firstNumber - secondNumber;
+    default:
+      return firstNumber * secondNumber;
+  }
 };
 const getQuestionAnswer = () => {
   const randomNumber1 = getRandomNumber(1, 100);
@@ -26,4 +34,9 @@ const getQuestionAnswer = () => {
   const calcAnswer = String(randomNumbersCalculation(randomNumber1, randomNumber2, randomSign));
   return cons(calcQuestion, calcAnswer);
 };
-export default getQuestionAnswer;
+const calcGame = () => {
+  greetings();
+  brainRules('What is the result of the expression?');
+  brainGame(getQuestionAnswer);
+};
+export default calcGame;
