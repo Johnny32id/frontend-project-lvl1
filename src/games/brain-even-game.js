@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 import { cons } from '@hexlet/pairs';
 
-import {
-  getRandomNumber, greetings, brainRules, brainGame,
-} from '..';
+import { getRandomNumber, brainGame } from '..';
 
 const isEven = (number) => number % 2 === 0;
 const getQuestionAnswer = () => {
@@ -12,8 +10,6 @@ const getQuestionAnswer = () => {
   return cons(evenQuestion, evenAnswer);
 };
 const evenGame = () => {
-  greetings();
-  brainRules('Answer "yes" if the number is even, otherwise answer "no".');
-  brainGame(getQuestionAnswer);
+  brainGame(getQuestionAnswer, 'Answer "yes" if the number is even, otherwise answer "no".');
 };
 export default evenGame;
