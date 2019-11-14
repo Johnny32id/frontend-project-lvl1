@@ -1,31 +1,28 @@
 #!/usr/bin/env node
 import { cons, car, cdr } from '@hexlet/pairs';
 
-import {
-  getRandomNumber, greetings, brainRules, brainGame,
-} from '..';
+import { getRandomNumber, brainGame } from '..';
 
-const getProgressionWithReplace = (firstNumber, difference, randomNumber) => {
-  let progression = `${firstNumber}`;
-  for (let counter = 1; counter < 10; counter += 1) {
-    const nextProgressionNumber = firstNumber + difference * counter;
+const getProgressionWithReplace = (firstValue, difference) => {
+  let progression = `${firstValue}`;
+  let counter = 1;
+  while (counter < 10) {
+    const nextProgressionNumber = firstValue + difference * counter;
     progression += ` ${nextProgressionNumber}`;
+    counter += 1;
   }
-  const randomReplace = firstNumber + difference * randomNumber;
+  const randomReplace = firstValue + difference * getRandomNumber(1, counter);
   return cons(progression.replace(randomReplace, '..'), randomReplace);
 };
 const getQuestionAnswer = () => {
-  const randomNumber = getRandomNumber(2, 50);
+  const randomProgressionStart = getRandomNumber(2, 50);
   const randomDifference = getRandomNumber(2, 5);
-  const randomReplacement = getRandomNumber(1, 9);
-  const progression = getProgressionWithReplace(randomNumber, randomDifference, randomReplacement);
-  const progQuestion = car(progression);
-  const progAnswer = String(cdr(progression));
-  return cons(progQuestion, progAnswer);
+  const progression = getProgressionWithReplace(randomProgressionStart, randomDifference);
+  const progressionQuestion = car(progression);
+  const progressionAnswer = String(cdr(progression));
+  return cons(progressionQuestion, progressionAnswer);
 };
 const progressionGame = () => {
-  greetings();
-  brainRules('What number is missing in the progression?');
-  brainGame(getQuestionAnswer);
+  brainGame(getQuestionAnswer, 'What number is missing in the progression?');
 };
 export default progressionGame;

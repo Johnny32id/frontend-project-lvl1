@@ -1,42 +1,31 @@
 #!/usr/bin/env node
 import { cons } from '@hexlet/pairs';
 
-import {
-  getRandomNumber, greetings, brainRules, brainGame,
-} from '..';
+import { getRandomNumber, brainGame } from '..';
 
-const getRandomSign = () => {
-  const randomNumberFrom1To3 = getRandomNumber(1, 3);
-  switch (randomNumberFrom1To3) {
-    case 1:
-      return '+';
-    case 2:
-      return '-';
-    default:
-      return '*';
-  }
+const getRandomSign = (signs) => {
+  const randomIndex = getRandomNumber(0, signs.length - 1);
+  return signs.charAt(randomIndex);
 };
-const randomNumbersCalculation = (firstNumber, secondNumber, sign) => {
+const getCalculate = (firstValue, secondValue, sign) => {
   switch (sign) {
     case '+':
-      return firstNumber + secondNumber;
+      return firstValue + secondValue;
     case '-':
-      return firstNumber - secondNumber;
+      return firstValue - secondValue;
     default:
-      return firstNumber * secondNumber;
+      return firstValue * secondValue;
   }
 };
 const getQuestionAnswer = () => {
-  const randomNumber1 = getRandomNumber(1, 100);
-  const randomNumber2 = getRandomNumber(1, 100);
-  const randomSign = getRandomSign();
-  const calcQuestion = `${randomNumber1} ${randomSign} ${randomNumber2}`;
-  const calcAnswer = String(randomNumbersCalculation(randomNumber1, randomNumber2, randomSign));
+  const firstValue = getRandomNumber(1, 100);
+  const secondValue = getRandomNumber(1, 100);
+  const randomSign = getRandomSign('+-*');
+  const calcQuestion = `${firstValue} ${randomSign} ${secondValue}`;
+  const calcAnswer = String(getCalculate(firstValue, secondValue, randomSign));
   return cons(calcQuestion, calcAnswer);
 };
-const calcGame = () => {
-  greetings();
-  brainRules('What is the result of the expression?');
-  brainGame(getQuestionAnswer);
+const calculationGame = () => {
+  brainGame(getQuestionAnswer, 'What is the result of the expression?');
 };
-export default calcGame;
+export default calculationGame;
