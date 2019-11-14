@@ -1,27 +1,22 @@
 import { cons } from '@hexlet/pairs';
 
-import {
-  getRandomNumber, greetings, brainRules, brainGame,
-} from '..';
+import { getRandomNumber, brainGame } from '..';
 
-const getPrimeNumber = (number) => {
+const isPrime = (value) => {
   let divisorCounter = 0;
-  for (let divisor = 1; divisor <= number; divisor += 1) {
-    if (number % divisor === 0) {
+  for (let divisor = 1; divisor <= value; divisor += 1) {
+    if (value % divisor === 0) {
       divisorCounter += 1;
     }
   }
-  return divisorCounter;
+  return divisorCounter === 2;
 };
-const isPrime = (number) => number === 2;
 const getQuestionAnswer = () => {
   const primeQuestion = getRandomNumber(1, 1000);
-  const primeAnswer = isPrime(getPrimeNumber(primeQuestion)) ? 'yes' : 'no';
+  const primeAnswer = isPrime(primeQuestion) ? 'yes' : 'no';
   return cons(primeQuestion, primeAnswer);
 };
 const primeGame = () => {
-  greetings();
-  brainRules('Answer "yes" if given number is prime. Otherwise answer "no".');
-  brainGame(getQuestionAnswer);
+  brainGame(getQuestionAnswer, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 export default primeGame;
