@@ -18,7 +18,8 @@ const brainGame = (getQuestionAnswer, rule) => {
     if (userAnswer === cdr(questionAnswer)) {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(questionAnswer)}.\nLet's try again, ${name}`);
+      console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(questionAnswer)}.`);
+      console.log(`Let's try again, ${name}`);
       break;
     }
   }
