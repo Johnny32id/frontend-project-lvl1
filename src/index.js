@@ -2,8 +2,7 @@ import readlineSync from 'readline-sync';
 
 import { car, cdr } from '@hexlet/pairs';
 
-export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-export const brainGame = (getQuestionAnswer, rule) => {
+const brainGame = (getQuestionAnswer, rule) => {
   console.log('Welcome to the Brain Games!');
   console.log(rule);
   const name = readlineSync.question('May I have your name?');
@@ -24,3 +23,4 @@ export const brainGame = (getQuestionAnswer, rule) => {
     }
   }
 };
+export default brainGame;
