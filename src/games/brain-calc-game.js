@@ -19,11 +19,11 @@ const calculate = (firstValue, secondValue, sign) => {
       return firstValue * secondValue;
   }
 };
+const listOfSigns = '+-*';
 const getQuestionAnswer = () => {
   const firstValue = getRandomNumber(1, 100);
   const secondValue = getRandomNumber(1, 100);
-  const listOfCharacters = '+-*';
-  const randomSign = getRandomSign(listOfCharacters);
+  const randomSign = getRandomSign(listOfSigns);
   const question = `${firstValue} ${randomSign} ${secondValue}`;
   const answer = String(calculate(firstValue, secondValue, randomSign));
   return cons(question, answer);
