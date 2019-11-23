@@ -5,10 +5,11 @@ import brainGame from '..';
 
 import getRandomNumber from '../utils';
 
-const getProgressionWithReplace = (firstValue, difference) => {
+const getProgressionWithReplace = (firstValue) => {
   let progression = '';
   let progressionLength = 0;
   const desiredLength = 10;
+  const difference = 2;
   while (progressionLength < desiredLength) {
     const nextProgressionValue = firstValue + difference * progressionLength;
     progression = `${progression}${nextProgressionValue} `;
@@ -19,8 +20,7 @@ const getProgressionWithReplace = (firstValue, difference) => {
 };
 const getQuestionAnswer = () => {
   const randomProgressionStart = getRandomNumber(2, 50);
-  const randomDifference = getRandomNumber(2, 5);
-  const progression = getProgressionWithReplace(randomProgressionStart, randomDifference);
+  const progression = getProgressionWithReplace(randomProgressionStart);
   const question = car(progression);
   const answer = String(cdr(progression));
   return cons(question, answer);
