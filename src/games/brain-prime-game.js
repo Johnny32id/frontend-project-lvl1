@@ -10,12 +10,15 @@ const isPrime = (value) => {
     if (value % divisor === 0) {
       divisorCounter += 1;
     }
+    if (divisorCounter > 1) {
+      return false;
+    }
   }
   return divisorCounter === 1;
 };
 const getQuestionAnswer = () => {
   const question = getRandomNumber(1, 1000);
-  const answer = isPrime(primeQuestion) ? 'yes' : 'no';
+  const answer = isPrime(question) ? 'yes' : 'no';
   return cons(question, answer);
 };
 const brainPrimeRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
