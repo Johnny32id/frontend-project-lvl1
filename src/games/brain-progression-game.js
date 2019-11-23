@@ -8,9 +8,10 @@ import getRandomNumber from '../utils';
 const getProgressionWithReplace = (firstValue, difference) => {
   let progression = '';
   let progressionLength = 0;
-  while (progressionLength < 10) {
-    const nextProgressionNumber = firstValue + difference * progressionLength;
-    progression = `${progression}${nextProgressionNumber} `;
+  const desiredLength = 10;
+  while (progressionLength < desiredLength) {
+    const nextProgressionValue = firstValue + difference * progressionLength;
+    progression = `${progression}${nextProgressionValue} `;
     progressionLength += 1;
   }
   const randomReplace = firstValue + difference * getRandomNumber(1, progressionLength);
