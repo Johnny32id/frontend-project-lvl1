@@ -14,9 +14,9 @@ const isPrime = (value) => {
   return divisorCounter === 1;
 };
 const getQuestionAnswer = () => {
-  const primeQuestion = getRandomNumber(1, 1000);
-  const primeAnswer = isPrime(primeQuestion) ? 'yes' : 'no';
-  return cons(primeQuestion, primeAnswer);
+  const question = getRandomNumber(1, 1000);
+  const answer = isPrime(primeQuestion) ? 'yes' : 'no';
+  return cons(question, answer);
 };
 const brainPrimeRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const primeGame = () => {

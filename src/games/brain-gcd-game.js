@@ -16,9 +16,9 @@ const commonDivisor = (firstValue, secondValue) => {
 const getQuestionAnswer = () => {
   const firstNumeral = getRandomNumber(1, 100);
   const secondNumeral = getRandomNumber(1, 100);
-  const gcdQuestion = `${firstNumeral} ${secondNumeral}`;
-  const gcdAnswer = String(commonDivisor(firstNumeral, secondNumeral));
-  return cons(gcdQuestion, gcdAnswer);
+  const question = `${firstNumeral} ${secondNumeral}`;
+  const answer = String(commonDivisor(firstNumeral, secondNumeral));
+  return cons(question, answer);
 };
 const brainGcdRule = 'Find the greatest common divisor of given numbers.';
 const gcdGame = () => {

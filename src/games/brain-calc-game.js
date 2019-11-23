@@ -24,9 +24,9 @@ const getQuestionAnswer = () => {
   const secondValue = getRandomNumber(1, 100);
   const listOfCharacters = '+-*';
   const randomSign = getRandomSign(listOfCharacters);
-  const calcQuestion = `${firstValue} ${randomSign} ${secondValue}`;
-  const calcAnswer = String(getCalculate(firstValue, secondValue, randomSign));
-  return cons(calcQuestion, calcAnswer);
+  const question = `${firstValue} ${randomSign} ${secondValue}`;
+  const answer = String(getCalculate(firstValue, secondValue, randomSign));
+  return cons(question, answer);
 };
 const brainCalcRule = 'What is the result of the expression?';
 const calculationGame = () => {

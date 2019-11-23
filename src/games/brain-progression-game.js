@@ -20,9 +20,9 @@ const getQuestionAnswer = () => {
   const randomProgressionStart = getRandomNumber(2, 50);
   const randomDifference = getRandomNumber(2, 5);
   const progression = getProgressionWithReplace(randomProgressionStart, randomDifference);
-  const progressionQuestion = car(progression);
-  const progressionAnswer = String(cdr(progression));
-  return cons(progressionQuestion, progressionAnswer);
+  const question = car(progression);
+  const answer = String(cdr(progression));
+  return cons(question, answer);
 };
 const brainProgressionRule = 'What number is missing in the progression?';
 const progressionGame = () => {
