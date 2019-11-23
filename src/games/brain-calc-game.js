@@ -9,7 +9,7 @@ const getRandomSign = (signs) => {
   const randomIndex = getRandomNumber(0, signs.length - 1);
   return signs.charAt(randomIndex);
 };
-const getCalculate = (firstValue, secondValue, sign) => {
+const calculate = (firstValue, secondValue, sign) => {
   switch (sign) {
     case '+':
       return firstValue + secondValue;
@@ -25,7 +25,7 @@ const getQuestionAnswer = () => {
   const listOfCharacters = '+-*';
   const randomSign = getRandomSign(listOfCharacters);
   const question = `${firstValue} ${randomSign} ${secondValue}`;
-  const answer = String(getCalculate(firstValue, secondValue, randomSign));
+  const answer = String(calculate(firstValue, secondValue, randomSign));
   return cons(question, answer);
 };
 const brainCalcRule = 'What is the result of the expression?';
