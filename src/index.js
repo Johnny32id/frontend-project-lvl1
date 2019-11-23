@@ -7,18 +7,21 @@ const brainGame = (getQuestionAnswer, rule) => {
   console.log(rule);
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}!`);
-  for (let counter = 0; counter <= 3; counter += 1) {
+  const questionsQuantity = 3;
+  for (let counter = 0; counter <= questionsQuantity; counter += 1) {
     if (counter === 3) {
       console.log(`Congratulations, ${name}!`);
       break;
     }
     const questionAnswer = getQuestionAnswer();
-    console.log(`Question: ${car(questionAnswer)}`);
+    const question = `Question: ${car(questionAnswer)}`;
+    console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === cdr(questionAnswer)) {
+    const gameAnswer = cdr(questionAnswer);
+    if (userAnswer === gameAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer;(. Correct answer was ${cdr(questionAnswer)}.`);
+      console.log(`${userAnswer} is wrong answer;(. Correct answer was ${gameAnswer}.`);
       console.log(`Let's try again, ${name}`);
       break;
     }
