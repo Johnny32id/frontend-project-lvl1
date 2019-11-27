@@ -14,9 +14,10 @@
 1. $make install
 2. $make publish
 3. $npm link
-**To run the game you need to enter game name in terminal**
 
 **Games:**
+
+**To run the game you need to enter game name in terminal**
 * brain-even - you need  to check is even number or not
 * brain-calc - addition, subtraction or multiplication of two random numbers
 * brain-progression - you need find lost progression number
