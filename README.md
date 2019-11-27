@@ -2,20 +2,21 @@
 
 [![Build Status](https://travis-ci.org/Johnny32id/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Johnny32id/frontend-project-lvl1)
 
-brain-even: https://asciinema.org/a/ZlrmnpnPn1RSFA3sHC7Y5Op5s
+brain-even: (https://asciinema.org/a/ZlrmnpnPn1RSFA3sHC7Y5Op5s)
 
-brain-calc: https://asciinema.org/a/lzBMLhlCigl28Ie0O8bDAjHA4
+brain-calc: (https://asciinema.org/a/lzBMLhlCigl28Ie0O8bDAjHA4)
 
-brain-gcd: https://asciinema.org/a/CtWnGMqPJvlo1oxHNalHwtQ2F
+brain-gcd: (https://asciinema.org/a/CtWnGMqPJvlo1oxHNalHwtQ2F)
 
-brain-progression: https://asciinema.org/a/wKhAHzxyWU4o3mlRkdVEy3bAo
+brain-progression: (https://asciinema.org/a/wKhAHzxyWU4o3mlRkdVEy3bAo)
 
-brain-prime: https://asciinema.org/a/ZleDcZ7hso3ZEkQY6OlCcVBUy
+brain-prime: (https://asciinema.org/a/ZleDcZ7hso3ZEkQY6OlCcVBUy)
 
 Install:
-1)make install
-2)make publish
-3)npm link
+
+1)$make install/n
+2)$make publish/n
+3)$npm link/n
 To run the game you need to enter game name in terminal
 Games: 
 brain-even - you need  to check is even number or not
