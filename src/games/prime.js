@@ -5,6 +5,9 @@ import brainGame from '..';
 import getRandomNumber from '../utils';
 
 const isPrime = (value) => {
+  if (value <= 1) {
+    return false;
+  }
   let divisorCounter = 0;
   for (let divisor = 1; divisor <= value / 2; divisor += 1) {
     if (value % divisor === 0) {
