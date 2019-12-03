@@ -1,22 +1,21 @@
-#!/usr/bin/env node
 import { cons, car, cdr } from '@hexlet/pairs';
 
 import brainGame from '..';
 
 import getRandomNumber from '../utils';
 
+const progressionLength = 10;
+const difference = getRandomNumber(2, 5);
 const getProgressionWithReplaceRandomMember = (firstValue) => {
   let progression = '';
   let progressionCounter = 0;
-  const progressionLength = 10;
-  const difference = getRandomNumber(2, 5);
   while (progressionCounter < progressionLength) {
-    const nextProgressionValue = firstValue + difference * progressionLength;
+    const nextProgressionValue = firstValue + difference * progressionCounter;
     progression = `${progression}${nextProgressionValue} `;
     progressionCounter += 1;
   }
-  const randomReplace = firstValue + difference * getRandomNumber(1, progressionLength);
-  return cons(progression.replace(randomReplace, '..'), randomReplace);
+  const valueToReplace = firstValue + difference * getRandomNumber(1, progressionCounter);
+  return cons(progression.trim().replace(valueToReplace, '..'), valueToReplace);
 };
 const getQuestionAnswer = () => {
   const randomProgressionStart = getRandomNumber(2, 50);
