@@ -8,7 +8,7 @@ const brainGame = (getQuestionAnswer, rule) => {
   console.log(rule);
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}!`);
-  for (let counter = 0; counter < questionsQuantity; counter += 1) {
+  for (let counter = 1; counter <= questionsQuantity; counter += 1) {
     const questionAnswer = getQuestionAnswer();
     const question = `Question: ${car(questionAnswer)}`;
     console.log(question);
@@ -19,10 +19,8 @@ const brainGame = (getQuestionAnswer, rule) => {
     } else {
       console.log(`${userAnswer} is wrong answer;(. Correct answer was ${gameAnswer}.`);
       console.log(`Let's try again, ${name}`);
-      break;
-    } if (counter === questionsQuantity - 1) {
-      console.log(`Congratulations, ${name}!`);
-    }
+      return;
+    } console.log(`Congratulations, ${name}!`);
   }
 };
 export default brainGame;
