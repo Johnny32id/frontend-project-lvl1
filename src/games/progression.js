@@ -8,14 +8,19 @@ const progressionLength = 10;
 const difference = getRandomNumber(2, 5);
 const getProgressionWithReplaceRandomMember = (firstValue) => {
   let progression = '';
-  let progressionCounter = 0;
-  while (progressionCounter < progressionLength) {
-    const nextProgressionValue = firstValue + difference * progressionCounter;
-    progression = `${progression}${nextProgressionValue} `;
+  let progressionCounter = 1;
+  const counterValueToSkip = getRandomNumber(progressionCounter, progressionLength);
+  const hiddenValue = firstValue + difference * counterValueToSkip;
+  while (progressionCounter <= progressionLength) {
+    if (progressionCounter === counterValueToSkip) {
+      progression = `${progression}.. `;
+    } else {
+      const nextProgressionValue = firstValue + difference * progressionCounter;
+      progression = `${progression}${nextProgressionValue} `;
+    }
     progressionCounter += 1;
   }
-  const valueToReplace = firstValue + difference * getRandomNumber(1, progressionCounter);
-  return cons(progression.trim().replace(valueToReplace, '..'), valueToReplace);
+  return cons(progression.trim(), hiddenValue);
 };
 const getQuestionAnswer = () => {
   const randomProgressionStart = getRandomNumber(2, 50);
