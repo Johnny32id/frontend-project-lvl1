@@ -20,7 +20,7 @@ const brainGame = (getQuestionAnswer, rule) => {
       console.log(`${userAnswer} is wrong answer;(. Correct answer was ${gameAnswer}.`);
       console.log(`Let's try again, ${name}`);
       return;
-    } console.log(`Congratulations, ${name}!`);
-  }
+    }
+  } console.log(`Congratulations, ${name}!`);
 };
 export default brainGame;
