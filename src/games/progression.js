@@ -1,36 +1,31 @@
-import { cons, car, cdr } from '@hexlet/pairs';
+import { cons } from '@hexlet/pairs';
 
 import brainGame from '..';
 
 import getRandomNumber from '../utils';
 
+const brainProgressionRule = 'What number is missing in the progression?';
 const progressionLength = 10;
-const difference = getRandomNumber(2, 5);
-const getProgressionWithReplaceRandomMember = (firstValue) => {
+const getQuestion = (firstValue, difference, valueToSkip) => {
   let progression = '';
-  let progressionCounter = 1;
-  const counterValueToSkip = getRandomNumber(progressionCounter, progressionLength);
-  const hiddenValue = firstValue + difference * counterValueToSkip;
-  while (progressionCounter <= progressionLength) {
-    if (progressionCounter === counterValueToSkip) {
+  for (let counter = 0; counter < progressionLength; counter += 1) {
+    if (counter === valueToSkip) {
       progression = `${progression}.. `;
     } else {
-      const nextProgressionValue = firstValue + difference * progressionCounter;
+      const nextProgressionValue = firstValue + difference * counter;
       progression = `${progression}${nextProgressionValue} `;
     }
-    progressionCounter += 1;
   }
-  return cons(progression.trim(), hiddenValue);
+  return progression.trim();
 };
 const getQuestionAnswer = () => {
   const randomProgressionStart = getRandomNumber(2, 50);
-  const progression = getProgressionWithReplaceRandomMember(randomProgressionStart);
-  const question = car(progression);
-  const answer = String(cdr(progression));
+  const randomDifference = getRandomNumber(2, 5);
+  const counterValueToSkip = getRandomNumber(0, progressionLength - 1);
+  const question = getQuestion(randomProgressionStart, randomDifference, counterValueToSkip);
+  const answer = String(randomProgressionStart + randomDifference * counterValueToSkip);
   return cons(question, answer);
 };
-const brainProgressionRule = 'What number is missing in the progression?';
-const progressionGame = () => {
+export default () => {
   brainGame(getQuestionAnswer, brainProgressionRule);
 };
-export default progressionGame;
