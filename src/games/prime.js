@@ -4,6 +4,7 @@ import brainGame from '..';
 
 import getRandomNumber from '../utils';
 
+const brainPrimeRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (value) => {
   if (value <= 1) {
     return false;
@@ -24,8 +25,6 @@ const getQuestionAnswer = () => {
   const answer = isPrime(question) ? 'yes' : 'no';
   return cons(question, answer);
 };
-const brainPrimeRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const primeGame = () => {
+export default () => {
   brainGame(getQuestionAnswer, brainPrimeRule);
 };
-export default primeGame;

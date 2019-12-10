@@ -4,6 +4,7 @@ import brainGame from '..';
 
 import getRandomNumber from '../utils';
 
+const brainGcdRule = 'Find the greatest common divisor of given numbers.';
 const getGcd = (firstValue, secondValue) => {
   let divisor = 1;
   for (let counter = 1; counter < firstValue && counter < secondValue; counter += 1) {
@@ -19,8 +20,6 @@ const getQuestionAnswer = () => {
   const answer = String(getGcd(firstValue, secondValue));
   return cons(question, answer);
 };
-const brainGcdRule = 'Find the greatest common divisor of given numbers.';
-const gcdGame = () => {
+export default () => {
   brainGame(getQuestionAnswer, brainGcdRule);
 };
-export default gcdGame;
